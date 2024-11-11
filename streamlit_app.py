@@ -1,13 +1,9 @@
 import streamlit as st
 import pandas as pd 
-from snowflake.snowpark.functions import col
+from snowflake.snowpark.functions import col, when_matched
 # Write directly to the app
 st.title(" :cup_with_straw: Pending Smoothie Orders :cup_with_straw:")
-st.write(
-    """ Orders that need to be filled 
-    """
-)
-
+st.write(""" Orders that need to be filled """)
 
 cnx = st.connection("snowflake")
 session = cnx.session()
